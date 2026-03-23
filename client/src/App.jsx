@@ -32,11 +32,20 @@ export default function App() {
     }
   }, [file]);
 
+  const MAX_FILE_SIZE = 25 * 1024 * 1024;
   const onDrop = (acceptedFiles) => {
-    const selected = acceptedFiles[0];
-    setFile(selected);
-    toast.success("File selected");
-  };
+  const selected = acceptedFiles[0];
+  
+  if (!selected) return;
+
+  if (selected.size > MAX_FILE_SIZE) {
+    toast.error("File is too large! Maximum allowed size is 25 MB.");
+    return;
+  }
+
+  setFile(selected);
+  toast.success("File selected");
+};
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
