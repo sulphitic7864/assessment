@@ -189,7 +189,7 @@ rm package-lock.json
 npm install
 ```
 
-Restart the server: 
+Restart the server:  
 
 ```bash
 npm run dev 
