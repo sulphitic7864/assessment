@@ -192,7 +192,7 @@ npm install
 Restart the server: 
 
 ```bash
-npm run dev
+npm run dev 
 ```
 
 ---
